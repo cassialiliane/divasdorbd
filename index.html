@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVAS DO RBD | Portfólio Y2K</title>
+    <!-- Google Fonts: Press Start 2P para detalhes retro e Plus Jakarta Sans para legibilidade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Press+Start+2P&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================
+           1. MOTOR DE DESIGN SYSTEM DINÂMICO
+           Estilo: Anos 2000 / Y2K / Auige do RBD
+           ========================================== */
+        :root {
+            --bg-primary: #0a0103;
+            --bg-surface: #1a0308;
+            --bg-card: rgba(40, 5, 12, 0.75);
+            --accent: #ff0033;
+            --accent-hover: #ff3366;
+            --accent-secondary: #ffd700; /* Dourado / Estrelas */
+            --text-primary: #ffffff;
+            --text-secondary: #ffb3c1;
+            --border-color: rgba(255, 0, 51, 0.3);
+            --font-title: 'Space Grotesk', sans-serif;
+            --font-pixel: 'Press Start 2P', monospace;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --shadow-glow: 0 0 25px rgba(255, 0, 51, 0.5);
+            --shadow-gold: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fundo com efeito estelar/glitter sutil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(white 1px, transparent 0),
+                radial-gradient(rgba(255,0,51,0.5) 1px, transparent 0);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Cabeçalho / Navegação */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: rgba(10, 1, 3, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .logo-nav {
+            font-family: var(--font-pixel);
+            font-size: 0.85rem;
+            color: var(--accent-secondary);
+            text-shadow: 0 0 10px var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        /* Estrutura Principal */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        /* 4. HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 75vh;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 4rem;
+        }
+
+        .hero-img-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 360px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 28px;
+            border: 3px solid var(--accent);
+            box-shadow: var(--shadow-glow);
+            transition: transform 0.4s ease;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.02) rotate(1deg);
+        }
+
+        /* Estrelas flutuantes decorativas Y2K */
+        .star-decor {
+            position: absolute;
+            color: var(--accent-secondary);
+            font-size: 1.5rem;
+            animation: pulseStar 2s infinite alternate;
+        }
+        .star-1 { top: -15px; left: 10px; animation-delay: 0s; }
+        .star-2 { bottom: -10px; right: 20px; animation-delay: 1s; }
+
+        @keyframes pulseStar {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+            100% { transform: scale(1.3) rotate(20deg); opacity: 1; text-shadow: var(--shadow-gold); }
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 5px 15px rgba(255,0,51,0.3);
+        }
+
+        .hero-content .subtitle {
+            font-family: var(--font-pixel);
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Redes Sociais / Links Importantes */
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            background: var(--bg-surface);
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-3px);
+        }
+
+        /* Seção Sobre */
+        .about-section {
+            padding: 5rem 0;
+            border-bottom: 2px dashed var(--border-color);
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: var(--accent-secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        /* Box de Currículo / Links Úteis */
+        .cv-box {
+            background: linear-gradient(135deg, rgba(26,3,8,0.9), rgba(60,5,15,0.9));
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-glow);
+            transition: 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px var(--accent);
+        }
+
+        .cv-box i {
+            font-size: 3rem;
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .cv-box h3 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cv {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-cv:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Projetos / Conteúdo Extra (Carrossel) */
+        .projects-section {
+            padding: 5rem 0;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .projects-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0.5rem;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .projects-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .project-card {
+            min-width: 350px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .project-card h3 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            align-self: flex-start;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--accent-secondary);
+        }
+
+        .carousel-btn {
+            background: var(--bg-surface);
+            border: 2px solid var(--accent);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            transition: 0.3s;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn.prev { left: -25px; }
+        .carousel-btn.next { right: -25px; }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 2px solid var(--border-color);
+            background: var(--bg-surface);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        /* Modal / Toast Notification (Anti-Quebra CV) */
+        .toast-modal {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--bg-surface);
+            border: 2px solid var(--accent-secondary);
+            padding: 1.25rem 1.75rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-gold);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateY(150%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-modal.show {
+            transform: translateY(0);
+        }
+
+        .toast-modal i {
+            color: var(--accent-secondary);
+            font-size: 1.5rem;
+        }
+
+        .toast-modal p {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @keyframes avatarSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2.5rem;
+            }
+            .hero-img-container {
+                order: -1;
+            }
+            .social-buttons {
+                justify-content: center;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simplificação mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-nav">
+            <i class="fa-solid fa-star"></i> DIVAS DO RBD <i class="fa-solid fa-star"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#curriculo">Dossiê / CV</a></li>
+                <li><a href="#projetos">Projetos & Links</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="subtitle">✨ Geração Rebelde • Nostalgia Y2K ✨</div>
+                <h1>DIVAS DO RBD</h1>
+                <p>Amor, paixão e rebeldia pura! Celebrando a maior febre pop dos anos 2000 que marcou gerações com gravatas vermelhas, estrelas na testa e hinos inesquecíveis.</p>
+                <div class="social-buttons">
+                    <a href="https://pt.wikipedia.org/wiki/RBD" target="_blank" class="btn-social">
+                        <i class="fa-solid fa-book-open"></i> História Oficial
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCQYEY1XJPGEBswnenN7gt9A" target="_blank" class="btn-social">
+                        <i class="fa-brands fa-youtube"></i> Músicas & Hits
+                    </a>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <i class="fa-solid fa-star star-decor star-1"></i>
+                <i class="fa-solid fa-star star-decor star-2"></i>
+                <!-- Avatar padrão vetorial em SVG (Fallback anti-quebra de foto) -->
+                <svg class="hero-img" id="fallbackAvatar" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradY2K" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1a0308" />
+                            <stop offset="100%" stop-color="#ff0033" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="300" height="300" fill="url(#gradY2K)"/>
+                    <circle cx="150" cy="110" r="60" fill="#ffd700" opacity="0.2"/>
+                    <path d="M150 70 L162 100 L195 105 L170 128 L177 160 L150 143 L123 160 L130 128 L105 105 L138 100 Z" fill="#ffd700" opacity="0.8"/>
+                    <text x="50%" y="78%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Press Start 2P', monospace" font-size="22" letter-spacing="2">RBD</text>
+                </svg>
+                <!-- Tag de imagem caso o usuário queira inserir uma foto real 'foto.jpg' na mesma pasta -->
+                <img src="foto.jpg" alt="DIVAS DO RBD" class="hero-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;" id="realPhoto" onerror="this.style.display='none';">
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section class="about-section" id="sobre">
+            <h2 class="section-title"><i class="fa-solid fa-heart"></i> O Fenômeno RBD</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>O RBD nasceu dentro da novela mexicana <em>Rebelde</em> e rapidamente transcendeu as telas da televisão para se tornar um dos maiores fenômenos da música pop em espanhol do mundo.</p>
+                    <p>Com figurinos marcantes, coreografias icônicas e letras que embalaram a adolescência de milhões, o grupo transformou uniformes escolares e gravatas vermelhas em um símbolo universal de juventude, liberdade e expressão.</p>
+                </div>
+                <div class="cv-box" id="curriculo" onclick="showToast()">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <h3>Dossiê / Currículo</h3>
+                    <p>Baixe o material especial de fã clube ou histórico de turnês.</p>
+                    <span class="btn-cv">Visualizar Arquivo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Projetos / Links Destacados -->
+        <section class="projects-section" id="projetos">
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> Conteúdos & Membros</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev" onclick="scrollCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="projects-container" id="projectsContainer">
+                    
+                    <div class="project-card">
+                        <div>
+                            <h3>História e Origem</h3>
+                            <p>Explore toda a trajetória do grupo desde a estreia na televisão mexicana até os recordes históricos de bilheteria e lotação em estádios pelo mundo.</p>
+                        </div>
+                        <a href="https://pt.wikipedia.org/wiki/RBD" target="_blank" class="project-link">Ler no Wikipedia <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3>Sobre os Membros</h3>
+                            <p>Descubra as diferentes atuações, caminhos profissionais, faculdades e carreiras solos dos integrantes após o encerramento do grupo original.</p>
+                        </div>
+                        <a href="https://www.guiadacarreira.com.br/blog/outras-profissoes-dos-integrantes-de-rbd" target="_blank" class="project-link">Ver artigo completo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3>Canal Oficial e Músicas</h3>
+                            <p>Reviva os maiores sucessos, clipes remasterizados e apresentações históricas direto no canal oficial do YouTube do RBD.</p>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UCQYEY1XJPGEBswnenN7gt9A" target="_blank" class="project-link">Assistir no YouTube <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <h3>Legado Y2K</h3>
+                            <p>O impacto duradouro da estética dos anos 2000, moda e comportamento que continuam ditando tendências nas redes sociais atuais.</p>
+                        </div>
+                        <a href="#sobre" class="project-link">Explorar <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 <span>DIVAS DO RBD</span>. Estética Retro Anos 2000. Y2K Vibes.</p>
+    </footer>
+
+    <!-- Toast / Modal de Contingência para Currículo -->
+    <div class="toast-modal" id="toastModal">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div>
+            <p>Currículo em atualização!</p>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">O arquivo PDF/Dossiê será adicionado em breve.</span>
+        </div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Verificação automática se a foto local existe para substituir o SVG se necessário
+        window.addEventListener('DOMContentLoaded', () => {
+            const realImg = document.getElementById('realPhoto');
+            const fallback = document.getElementById('fallbackAvatar');
+            
+            // Testa se a imagem 'foto.jpg' carrega com sucesso
+            const testImage = new Image();
+            testImage.src = 'foto.jpg';
+            testImage.onload = function() {
+                realImg.style.display = 'block';
+                fallback.style.display = 'none';
+            };
+        });
+
+        // Função do Carrossel de Projetos
+        function scrollCarousel(direction) {
+            const container = document.getElementById('projectsContainer');
+            const scrollAmount = 380; // largura aproximada do card + gap
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Alerta elegante de Currículo em atualização
+        function showToast() {
+            const toast = document.getElementById('toastModal');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
